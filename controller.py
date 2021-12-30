@@ -18,8 +18,8 @@ class MainMenu:
         tournament = Tournament()
         try:
             result = viewmenu.print_choice_input_menu(result)
-        except ValueError as ve:
-            viewmenu.print_error_enter_int(ve)
+        except ValueError:
+            viewmenu.print_error_enter_int()
             self.menu()
 
         if result == 1:  # adding player
@@ -29,20 +29,20 @@ class MainMenu:
             menuplayer.menu_modif_player()
             self.menu()
         elif result == 3:  # creation of a tournament
-            tour = 1
-            MenuTournament().play_tournament(tour)
+            turn = 1
+            MenuTournament().play_tournament(turn)
             self.menu()
-        elif result == 4:  # to see all tournaments create and play tournaments not finalized
+        elif result == 4:  # to see all tournaments created and play tournaments not finalized
             MethodMainMenu().find_and_play_tournament()
             self.menu()
         elif result == 5:  # see the ranking
-            retour_list = MethodPlayer().stat_classement()
-            player_tri_ranking = retour_list[0]
+            retour_list = MethodPlayer().rank_stats()
+            player_sort_ranking = retour_list[0]
             viewmenu.print_rank(player_sort_ranking)
             # ViewToShare().print_pass_validation()
             self.menu()
         elif result == 6:  # allows the modification of rank points per players
-            menuplayer.modif_classement()
+            menuplayer.modify_classement()
             self.menu()
         elif result == 7:  # access to the report management menu
             MainMenu().menu_reports()
@@ -53,6 +53,8 @@ class MainMenu:
             viewmenu.print_error_enter_int()
             self.menu()
 
+    def menu_reports(self):
+        pass
 
 class MethodMainMenu:
     pass

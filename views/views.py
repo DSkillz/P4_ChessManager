@@ -23,5 +23,8 @@ class ViewMenu:
     def print_choice_input_menu(self, resultat):
         pass
 
-    def print_error_enter_int(self, ve):
-        print(f'Vous avez entré {ve}, recommenceez svp.')
+    def print_rank(self):
+        pass
+
+    def print_error_enter_int(self):
+        print(f'Vous avez tapé:, saisie incorrecte, recommencez svp.')

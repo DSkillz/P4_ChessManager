@@ -1,7 +1,12 @@
+from player.view import ViewPlayer
+from player.model import Player
+from player.model import MethodPlayer
+from tournament.controller import MethodTournament
+
+
 class MenuPlayer:
     def menu_add_player(self):
         """management menu addition players"""
-
         viewplayer = ViewPlayer()
         player = MethodTournament().elements_player()
         cplayer = Player(**player)
@@ -14,8 +19,15 @@ class MenuPlayer:
             viewplayer.print_new_player_register()
             self.ask_add_again_player()
         if not existing == []:
-            viewplayer.print_exicting_player(existing)
+            viewplayer.print_existing_player(existing)
             self.ask_add_again_player()
 
-    def print_error_enter_int(self):
+    def menu_modif_player(self):
         pass
+
+    def modify_classement(self):
+        pass
+
+    def ask_add_again_player(self):
+        pass
+
