@@ -1,6 +1,15 @@
+import os
+
 class ViewMenu:
     def __init__(self):
         pass
+
+    @staticmethod
+    def clear_console():
+        command = 'clear'
+        if os.name in ('nt', 'dos'):  # If Machine is running on Windows, use cls
+            command = 'cls'
+        os.system(command)
 
     def print_accueil(self):
         # menu printing and retrieval of menu choice
@@ -18,6 +27,7 @@ class ViewMenu:
         print(" 8 : sortir du logiciel.")
         print("\nQuel est votre choix : ")
         resultat = input()
+        self.clear_console()
         return resultat
 
     def print_choice_input_menu(self, resultat):
