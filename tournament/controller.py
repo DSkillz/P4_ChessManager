@@ -5,6 +5,7 @@ class MenuTournament:
     def play_tournament(self, turn):
         pass
 
-class MethodTournament:
-    pass
 
+class TournamentController:
+    def elements_player(self):
+        pass

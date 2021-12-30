@@ -15,7 +15,7 @@ class ViewMenu:
         # menu printing and retrieval of menu choice
 
         print()
-        print("Bienvenue sur le gestionnaire de jeu d'échec.\n")
+        print("Bienvenue sur le gestionnaire de jeu d'échec.")
         print("Selectionnez le menu souhaité.\n")
         print(" 1 : ajouter un joueur.")
         print(" 2 : modifier un joueur.")
@@ -26,12 +26,20 @@ class ViewMenu:
         print(" 7 : rapport.")
         print(" 8 : sortir du logiciel.")
         print("\nQuel est votre choix : ")
-        resultat = input()
+        result = input()
         self.clear_console()
-        return resultat
+        return result
 
-    def print_choice_input_menu(self, resultat):
-        pass
+    @staticmethod
+    def print_choice_input_menu(result):
+        if result == "1":
+            print("Ajout d'un joueur.")
+            print("Saisir dans l'ordre:\n")
+            print("1 : Nom du joueur")
+            print("2 : Prénom")
+            print("3 : Date de naissance\n")
+        elif result == "2":
+            print("Modifier un joueur")
 
     def print_rank(self):
         pass

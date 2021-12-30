@@ -1,14 +1,19 @@
 from player.view import ViewPlayer
 from player.model import Player
 from player.model import MethodPlayer
-from tournament.controller import MethodTournament
+from tournament.controller import TournamentController
 
 
 class MenuPlayer:
     def menu_add_player(self):
         """management menu addition players"""
         viewplayer = ViewPlayer()
-        player = MethodTournament().elements_player()
+        player = Player()
+        player.name = input("Entrez un nom: ")
+        player.first_name = input("Entrez un prénom: ")
+        player.birth_date = input("Entrez une date de naissance (format, JJ/MM/AAAA): ")
+        player.sex = input("Entrez un genre (H/F): ")
+        # tournament = TournamentController().elements_player()
         cplayer = Player(**player)
         add_player = cplayer.add_players(player)
         resultat = MethodPlayer().duplicate_search(add_player)
