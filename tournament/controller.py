@@ -1,0 +1,2 @@
+class MenuTournament:
+    pass
